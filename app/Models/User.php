@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -59,8 +60,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function company_users()
+    public function companies()
     {
-        return $this->belongsToMany(Company_user::class);
+        return $this->belongsToMany(Company::class);
     }
 }
